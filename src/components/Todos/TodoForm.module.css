@@ -1,0 +1,48 @@
+.todoFormContainer {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.todoFormContainer form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.todoFormContainer input,
+.todoFormContainer textarea,
+.todoFormContainer select {
+  width: 70%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+}
+.todoFormContainer textarea {
+  max-width: 70%;
+  min-width: 70%;
+}
+
+.todoFormContainer select {
+  width: 73.5%;
+  padding: 10px;
+  height: 55px;
+}
+
+.todoFormContainer button {
+  width: 30%;
+  padding: 10px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.todoFormContainer button:hover {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}

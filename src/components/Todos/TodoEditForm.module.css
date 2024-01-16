@@ -1,0 +1,30 @@
+
+.editFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.editFormContainer input,
+.editFormContainer textarea,
+.editFormContainer select {
+  width: 70%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.editFormContainer select {
+  width: 73.5%;
+  padding: 10px;
+  height: 55px;
+}
+
+
+.editFormButtons {
+  display: flex;
+  gap: 10px;
+}
