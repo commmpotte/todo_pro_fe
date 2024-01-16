@@ -8,18 +8,22 @@ import './App.css'
 function App() {
   const [todos, setTodos] = useState([])
   const updatedFromInside = useRef(false)
-
+  // http://localhost:3001
+  // `${process.env.REACT_APP_API_URL}`
   useEffect(() => {
-    fetchTodos() // Изначальное получение списка задач
+    fetchTodos()
   }, [])
 
   const addTodoHandler = async (task) => {
     try {
-      const response = await axios.post('http://localhost:3001/api/tasks', {
-        title: task.title,
-        description: task.description,
-        status: task.status,
-      })
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL}api/tasks`,
+        {
+          title: task.title,
+          description: task.description,
+          status: task.status,
+        }
+      )
 
       const newTodo = {
         id: response.data._id,
@@ -38,7 +42,9 @@ function App() {
 
   const fetchTodos = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/tasks')
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}api/tasks`
+      )
       setTodos(response.data)
       console.log('Список задач обновлен:', response.data)
     } catch (error) {
@@ -49,7 +55,7 @@ function App() {
   // Удаление задачи на сервере
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/api/tasks/${id}`)
+      await axios.delete(`${process.env.REACT_APP_API_URL}api/tasks/${id}`)
       // После успешного удаления обновляем список задач
       setTimeout(() => {
         fetchTodos()
@@ -62,7 +68,7 @@ function App() {
   const toggleTodoHandler = (id) => {
     // Обновление статуса задачи на сервере
     axios
-      .patch(`http://localhost:3001/api/tasks/${id}`)
+      .patch(`${process.env.REACT_APP_API_URL}api/tasks/${id}`)
       .then((response) =>
         setTodos(todos.map((todo) => (todo._id === id ? response.data : todo)))
       )
@@ -72,14 +78,16 @@ function App() {
   const resetTodosHandler = () => {
     // Удаление всех задач на сервере
     axios
-      .delete('http://localhost:3001/api/tasks')
+      .delete(`${process.env.REACT_APP_API_URL}api/tasks`)
       .then(() => setTodos([]))
       .catch((error) => console.error('Error resetting tasks', error))
   }
 
   const deleteCompletedTodosHandler = async () => {
     try {
-      await axios.delete('http://localhost:3001/api/tasks?completed=true')
+      await axios.delete(
+        `${process.env.REACT_APP_API_URL}/api/tasks?completed=true`
+      )
 
       fetchTodos()
       setTodos((prevTodos) => prevTodos.filter((todo) => !todo.isCompleted))

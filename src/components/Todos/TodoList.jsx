@@ -10,7 +10,9 @@ function TodoList({ todos, deleteTodo, toggleTodo, updateTodos }) {
 
   const fetchTodos = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/tasks')
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}api/tasks`
+      )
       console.log(response)
     } catch (error) {
       console.error('Error fetching tasks', error)
@@ -35,7 +37,7 @@ function TodoList({ todos, deleteTodo, toggleTodo, updateTodos }) {
   const saveEditedTodo = async (editedTodo) => {
     try {
       await axios.patch(
-        `http://localhost:3001/api/tasks/${editedTodo._id}`,
+        `${process.env.REACT_APP_API_URL}api/tasks/${editedTodo._id}`,
         editedTodo
       )
       setEditingTodoId(null)
@@ -53,12 +55,10 @@ function TodoList({ todos, deleteTodo, toggleTodo, updateTodos }) {
   }
 
   return (
-<div>
+    <div>
       {!todos.length && <h2>Todo list is empty</h2>}
       {todos.map((todo) => (
-        <div
-          key={todo._id}
-        >
+        <div key={todo._id}>
           {editingTodoId === todo._id ? (
             <TodoEditForm
               todo={todo}
