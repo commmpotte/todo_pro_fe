@@ -1,40 +1,27 @@
-# Frontend Project Name
+# Todo App via database
 
-Short description of your frontend project.
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-  - [Installation](#installation)
-  - [Run](#run)
-- [Folder Structure](#folder-structure)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Introduction
-
-Brief introduction about your frontend project.
-
-## Features
-
-- List key features of your frontend project.
+The Todo App is a low-designed task management application developed using React. It provides users with an intuitive interface to create, edit, and organize their tasks efficiently. Main attention was paid for work with database. Backend is here: https://github.com/commmpotte/todo_pro_bd
 
 ## Technologies Used
 
-- [React](https://reactjs.org/)
-- [React Router](https://reactrouter.com/)
-- [Axios](https://axios-http.com/)
-- [CSS Modules](https://github.com/css-modules/css-modules)
+- React
+- Axios for API requests
+- React Icons for iconography
+- CSS Modules for styling
 
-## Getting Started
+## Features
 
-Provide instructions on how to set up and run your frontend project locally.
+- Add new tasks with a title, description, and status selection.
+- Edit existing tasks, including title, description, and status.
+- Delete individual tasks or all completed tasks.
+- Mark tasks as completed, in progress, or waiting.
 
 ### Installation
 
 1. Clone the repository.
-   ```bash
-   git clone https://github.com/your-username/your-frontend-project.git
+2. Install dependencies using npm install.
+3. Start the development server with npm start.
+
+### Some pics
+<img width="523" alt="Снимок экрана 2024-01-16 в 15 52 04" src="https://github.com/commmpotte/todo_pro_fe/assets/95095531/3fb3a8b8-8023-42df-b773-96c10e289780">
+<img width="429" alt="Снимок экрана 2024-01-16 в 15 54 22" src="https://github.com/commmpotte/todo_pro_fe/assets/95095531/67cda04b-c1bc-42da-a258-c1dab218cba8">
