@@ -2,6 +2,8 @@
 
 The Todo App is a low-designed task management application developed using React. It provides users with an intuitive interface to create, edit, and organize their tasks efficiently. Main attention was paid for work with database. Backend is here: https://github.com/commmpotte/todo_pro_bd
 
+*If you can't see any tasks, thats because some limits on my backend side via railway.app*
+
 ## Technologies Used
 
 - React
